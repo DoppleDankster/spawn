@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "spawn"
+name = "spawn2"
 version = "0.1.0"
 description = "V2 of Spawn using AWS Lambdas / DynamoDB / EC2 / IAM / API Gateway"
 authors = ["David Medioni <david.medioni@datapred.com>"]
@@ -7,6 +7,7 @@ authors = ["David Medioni <david.medioni@datapred.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 boto3 = "^1.18.50"
+ipdb = "^0.13.9"
 
 
 [tool.poetry.dev-dependencies]
