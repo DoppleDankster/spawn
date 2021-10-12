@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-from typing import List, Dict, Optional, Sequence
+from typing import Dict, Sequence
 import boto3
-from mypy_boto3_ec2.service_resource import EC2ServiceResource, Instance
 
 
 class EC2:
     def __init__(self, region_name):
         self.ec2 = boto3.resource("ec2", region_name=region_name)
 
-    def get_instance(self, instance_id: str) -> Instance:
+    def get_instance(self, instance_id: str):
         """
         Return an ec2 instance object.
 
@@ -23,7 +22,7 @@ class EC2:
         """
         return self.ec2.Instance(instance_id)
 
-    def get_instances(self) -> Sequence[Instance]:
+    def get_instances(self):
         """
         Return The list of Spawn EC2 instances.
 
@@ -39,8 +38,8 @@ class EC2:
         launch_template_name: str,
         launch_template_version: str,
         instance_type: str = None,
-        tags: Sequence[dict] = None,
-    ) -> Instance:
+        tags: Sequence[Dict] = None,
+    ):
         """
         Create a new EC2 instance and start it.
 
